@@ -144,30 +144,34 @@
 			#about-us .text-color-web {
 				color: #8eaeba;
 			}
+
+			#about-us {
+				padding-top: 25vh; /* Valor original para pantallas grandes */
+			}
+
+			@media (max-width: 768px) {
+				#about-us {
+					padding-top: 10vh; /* Reduce el padding-top en pantallas pequeñas */
+				}
+}
 		</style>
 
 		<!-- BEGIN ABOUT US SECTION -->
-		<section id="about-us" class="bg-color padding-divider-top padding-divider-bottom" style="padding-top: 25vh">;
+		<section id="about-us" class="bg-color padding-divider-top padding-divider-bottom ">
 			<div class="container">
-				<!-- La etiqueta de cierre del container se movió aquí para englobar correctamente el contenido de la sección -->
 				<div class="row justify-content-center">
 					<div class="col-lg-8 text-color-black">
-						<div class="about-us-desc text-color-black" data-animation-direction="from-bottom"
-							data-animation-delay="300">
+						<div class="about-us-desc text-color-black" data-animation-direction="from-bottom" data-animation-delay="300">
 							<h3 class="text-color-web">¡Nos Casamos!</h3>
 							<p class="text-color-web">
-								Estamos profundamente emocionados de compartir contigo este momento tan significativo y
-								especial en nuestras vidas. Te invitamos cordialmente a reservar esta fecha en tu
-								calendario. Apreciamos tu confirmación de asistencia. Recibe un afectuoso saludo de
-								nuestra parte.</p>
-							<img src="images/fotos/WhatsApp Image 2024-03-23 at 18.05.08.jpeg" alt="About Us"
-								class="img-fluid" style="filter: grayscale(100%);">
+								Estamos profundamente emocionados de compartir contigo este momento tan significativo y especial en nuestras vidas. Te invitamos cordialmente a reservar esta fecha en tu calendario. Apreciamos tu confirmación de asistencia. Recibe un afectuoso saludo de nuestra parte.
+							</p>
+							<img src="images/fotos/WhatsApp Image 2024-03-23 at 18.05.08.jpeg" alt="About Us" class="img-fluid" style="filter: grayscale(100%);">
 						</div>
 					</div>
 				</div>
-			</div> <!-- Este div cierra correctamente el contenedor -->
+			</div>
 		</section>
-
 		<!-- END ABOUT US SECTION -->
 
 		<style>
@@ -213,11 +217,23 @@
 				color: #8eaeba;
 				font-family: "Playfair Display", serif;
 			}
+
+			/* Responsive adjustments */
+			@media (max-width: 768px) {
+				.location-illustration {
+					margin-bottom: 30px;
+				}
+			}
+
+			/* Custom styles for the photo gallery section */
+			
 		</style>
+
+
 
 		<!-- BEGIN LOCATION SECTION -->
 		<!-- BEGIN LOCATION SECTION -->
-		<section id="location" class="section-padding">
+		<section id="location">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -345,92 +361,70 @@
 
 							<form id="form-rsvp" method="post" action="#">
 
-								<div class="form-floating">
-									<input type="text" name="Name" id="name" placeholder="Your Name*"
-										class="form-control required fromName">
+								<!-- Nombre -->
+								<div class="form-floating mb-3">
+									<input type="text" name="Name" id="name" placeholder="Nombre*" class="form-control required">
 									<label for="name">Nombre*</label>
 								</div>
-
-								<div class="form-floating">
-									<input type="email" name="E-mail" id="email" placeholder="E-mail*"
-										class="form-control required fromEmail">
-									<label for="email">Apellidos*</label>
+							
+								<!-- Apellidos -->
+								<div class="form-floating mb-3">
+									<input type="text" name="Lastname" id="lastname" placeholder="Apellidos*" class="form-control required">
+									<label for="lastname">Apellidos*</label>
+								</div>
+							
+								<!-- Alergias -->
+								<div class="form-check mb-3">
+									<input class="form-check-input" type="checkbox" id="has_allergy" onchange="toggleAllergyDetails()">
+									<label class="form-check-label" for="has_allergy">¿Tienes alguna alergia?</label>
+								</div>
+								<div class="form-floating mb-3" id="allergy_details" style="display: none;">
+									<input type="text" name="AllergyDetails" id="allergy_details_input" placeholder="Detalles de la alergia" class="form-control">
+									<label for="allergy_details_input">Detalles de la alergia</label>
 								</div>
 
-								<div class="form-check-wrapper">
-									<div class="form-check form-check-inline">
-										<input class="form-check-input required" type="radio" name="Attend wedding"
-											id="attend_wedding_yes">
-										<label for="attend_wedding_yes">Si vendré.</label>
-									</div>
+								<script>
+									function toggleAllergyDetails() {
+										const allergyDetails = document.getElementById("allergy_details");
+										const hasAllergy = document.getElementById("has_allergy").checked;
 
-									<div class="form-check form-check-inline">
-										<input class="form-check-input required" type="radio" name="Attend wedding"
-											id="attend_wedding_no">
-										<label for="attend_wedding_no">No voy a venir pero relleno el formulario</label>
-									</div>
-								</div>
-
-								<div class="form-floating">
-									<select class="form-select" aria-label="Number of guests" name="Number of Guests"
-										id="num_guests">
-										<option value="0">0</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
+										if (hasAllergy) {
+											allergyDetails.style.display = "block";
+										} else {
+											allergyDetails.style.display = "none";
+										}
+									}
+								</script>
+							
+								<!-- Transporte -->
+								<div class="form-floating mb-3">
+									<select class="form-select" name="Transport" id="transport">
+										<option value="">Selecciona una opción...</option>
+										<option value="round_trip">Ida y vuelta</option>
+										<option value="one_way_to">Solo ida</option>
+										<option value="one_way_back">Solo vuelta</option>
+										<option value="no_need">No necesito transporte</option>
 									</select>
-
-									<label for="num_guests">Numero de armas que traeras</label>
+									<label for="transport">¿Necesitas transporte?</label>
 								</div>
-
-								<fieldset class="form-check-wrapper required" name="Meal Preferences" id="meal_pref">
-									<label>¿Qué país odias más?</label>
-
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="meal_meat">
-										<label for="meal_meat">
-											Bolivia
-										</label>
-									</div>
-
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="meal_fish">
-										<label for="meal_fish">
-											Venezuela
-										</label>
-									</div>
-
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="meal_vegetarian">
-										<label for="meal_vegetarian">
-											China
-										</label>
-									</div>
-
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" value="" id="meal_gluten_free">
-										<label for="meal_gluten_free">
-											Francia
-										</label>
-									</div>
-								</fieldset>
-
-								<div class="form-floating">
-									<textarea id="message" name="Message" placeholder="Message" class="form-control"
-										rows="4"></textarea>
-									<label for="message">Message</label>
+							
+								<!-- Canción -->
+								<div class="form-floating mb-3">
+									<input type="text" name="Song" id="song" placeholder="Canción favorita" class="form-control">
+									<label for="song">Canción que debe sonar sí o sí</label>
 								</div>
-
-								<div class="form_status_message"></div>
-
-								<div class="center">
-									<button type="submit" class="btn btn-primary submit_form">Send</button>
+							
+								<!-- Mensaje -->
+								<div class="form-floating mb-3">
+									<textarea id="message" name="Message" placeholder="Mensaje" class="form-control" rows="4"></textarea>
+									<label for="message">Mensaje</label>
+								</div>
+							
+								<div class="text-center">
+									<button type="submit" class="btn btn-primary submit_form">Enviar</button>
 								</div>
 							</form>
+							
 						</div>
 					</div>
 				</div>
