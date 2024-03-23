@@ -4,6 +4,7 @@ require_once 'vendor/autoload.php'; // Asegúrate de haber instalado la bibliote
 
 use Google\Spreadsheet\DefaultServiceRequest;
 use Google\Spreadsheet\ServiceRequestFactory;
+use Google\Client as Google_Client;
 
 // Configura las credenciales de autenticación de la API de Google Sheets
 putenv('GOOGLE_APPLICATION_CREDENTIALS=/path/to/credentials.json');
