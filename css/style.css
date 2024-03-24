@@ -3178,7 +3178,7 @@ p.center {
   display: grid;
   grid-template-columns: repeat(24, 1fr);
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .map-info-container::before {
   content: "";
@@ -3200,7 +3200,7 @@ p.center {
 .map-info-container .info-wrapper .location-info {
   background-color: #8eaeba;
   border: 10px solid #fff;
-  padding: 30px;
+  padding: 15px;
   display: inline-block;
   position: relative;
   z-index: 10;
