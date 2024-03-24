@@ -54,9 +54,9 @@
 	<div id="preloader">
 		<div class="loading-heart">
 			<div class="preloader-title">
-				Diego<br>
+				Pilar<br>
 				<small>&</small><br>
-				Pilar
+				Diego
 			</div>
 		</div>
 	</div>
@@ -120,9 +120,9 @@
 							<h2 data-animation-direction="fade" data-animation-delay="600">Save the Date</h2>
 
 							<h1 class="hero-title light ">
-								<span data-animation-direction="from-right" data-animation-delay="300">Diego</span>
+								<span data-animation-direction="from-right" data-animation-delay="300">Pilar</span>
 								<small data-animation-direction="from-top" data-animation-delay="300">&</small>
-								<span data-animation-direction="from-left" data-animation-delay="300">Pilar</span>
+								<span data-animation-direction="from-left" data-animation-delay="300">Diego</span>
 							</h1>
 
 							<div class="hero-subtitle light" data-animation-direction="fade"
@@ -345,6 +345,10 @@
 							<img src="images/fotos/33FD1207-DB3E-430C-92E2-5A4C44089AA2.JPG" alt="Photo 1"
 								class="img-fluid rounded shadow-sm mb-2 w-100 h-auto">
 						</div>
+						<div class="p-3">
+							<img src="images\fotos\6523774D-3F07-4BA0-BD02-1EE221216526.JPG" alt="Photo 3"
+								class="img-fluid rounded shadow-sm mb-2 w-100 h-auto">
+						</div>
 						<div class="p-2 w-50">
 							<img src="images\fotos\7E6385C5-C83A-4194-A74A-1434063DCCAD.JPG" alt="Photo 2"
 								class="img-fluid rounded shadow-sm mb-2 w-100 h-auto ">
@@ -396,6 +400,7 @@
 										}
 									}
 								</script>
+								
 							
 								<!-- Transporte -->
 								<div class="form-floating mb-3">
@@ -408,13 +413,57 @@
 									</select>
 									<label for="transport">¿Necesitas transporte?</label>
 								</div>
+
+								<!-- Cumpleaños -->
+								<div class="form-floating mb-3">
+									<input type="date" name="Birthday" id="birthday" placeholder="Fecha de Nacimiento*" class="form-control required">
+									<label for="birthday">¿Que día es tu cumpleaños?</label>
+								</div>
+					
+								<!-- Asistencia a la Iglesia y Banquete -->
+								<div class="form-floating mb-3">
+									<select class="form-select" name="EventAttendance" id="event_attendance">
+										<option value="">Selecciona una opción...</option>
+										<option value="church">Solo Iglesia</option>
+										<option value="church_and_banquet">Iglesia y Banquete</option>
+										<option value="none">Ninguno</option>
+									</select>
+									<label for="event_attendance">Asistencia</label>
+								</div>
+
+								<h4 class="mb-3">¿Dónde podemos enviar tu invitación?</h4>
+
+								<!-- Calle y Número -->
+								<div class="form-floating mb-3">
+									<input type="text" name="AddressStreet" id="address_street" placeholder="Calle y Número*" class="form-control required">
+									<label for="address_street">Calle y Número*</label>
+								</div>
+							
+								<!-- Ciudad -->
+								<div class="form-floating mb-3">
+									<input type="text" name="AddressCity" id="address_city" placeholder="Ciudad*" class="form-control required">
+									<label for="address_city">Ciudad*</label>
+								</div>
+							
+								<!-- Estado o Provincia -->
+								<div class="form-floating mb-3">
+									<input type="text" name="AddressState" id="address_state" placeholder="Estado o Provincia" class="form-control">
+									<label for="address_state">Estado o Provincia</label>
+								</div>
+							
+								<!-- Código Postal -->
+								<div class="form-floating mb-3">
+									<input type="text" name="AddressZip" id="address_zip" placeholder="Código Postal*" class="form-control required">
+									<label for="address_zip">Código Postal*</label>
+								</div>
 							
 								<!-- Canción -->
 								<div class="form-floating mb-3">
 									<input type="text" name="Song" id="song" placeholder="Canción favorita" class="form-control">
 									<label for="song">Canción que debe sonar sí o sí</label>
 								</div>
-							
+								
+								<a>Te dejamos total libertad para decirnos lo que quieras</a>
 								<!-- Mensaje -->
 								<div class="form-floating mb-3">
 									<textarea id="message" name="Message" placeholder="Mensaje" class="form-control" rows="4"></textarea>
@@ -446,9 +495,9 @@
 
 						<div class="col-md-4">
 							<div class="footer-logo">
-								Diego<br>
+								Pilar<br>
 								<small>&</small><br>
-								Pilar
+								Diego
 							</div>
 						</div>
 
