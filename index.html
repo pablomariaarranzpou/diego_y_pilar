@@ -128,6 +128,9 @@
 							<div class="hero-subtitle light" data-animation-direction="fade"
 								data-animation-delay="1000">AGO <span>24</span> 2024</div>
 
+								<div data-animation-direction="fade" data-animation-delay="1000">
+									<div class="countdown" data-date="2024/08/24 12:00:00" data-format="dHMS" data-animation-direction="fade" data-animation-delay="1000"></div>
+
 							<div data-animation-direction="fade" data-animation-delay="1000">
 								<a href="#rsvp" class="btn btn-light scrollto">Confirmar Asistencia</a>
 							</div>
@@ -146,10 +149,11 @@
 			}
 
 			#about-us {
-				padding-top: 25vh; /* Valor original para pantallas grandes */
+				padding-top: 25vh;
+				padding-bottom: 10vh; /* Valor original para pantallas grandes */
 			}
 
-			@media (max-width: 768px) {
+			@media (max-width: 1025px) {
 				#about-us {
 					padding-top: 10vh; /* Reduce el padding-top en pantallas pequeñas */
 				}
@@ -411,13 +415,13 @@
 								<!-- Transporte -->
 								<div class="form-floating mb-3">
 									<select class="form-select" name="Transport" id="transport">
-										<option value="">Selecciona una opción...</option>
+										<option value="">Selecciona una opción</option>
 										<option value="round_trip">Ida y vuelta</option>
 										<option value="one_way_to">Solo ida</option>
 										<option value="one_way_back">Solo vuelta</option>
 										<option value="no_need">No necesito transporte</option>
 									</select>
-									<label for="transport">¿Necesitas transporte? (Bus)</label>
+									<label for="transport">¿Necesitas transporte?</label>
 								</div>
 
 								<!-- Cumpleaños -->
@@ -475,6 +479,12 @@
 									<textarea id="message" name="Message" placeholder="Mensaje" class="form-control" rows="4"></textarea>
 									<label for="message">Mensaje</label>
 								</div>
+
+							
+								<div class="form-check mb-3">
+									<input class="form-check-input" type="checkbox" id="tax_evasion" required>
+									<label class="form-check-label" for="tax_evasion">Marca aquí si evades impuestos en las Islas Caimán</label>
+								</div>
 							
 								<div class="text-center">
 									<button type="submit" class="btn btn-primary submit_form">Enviar</button>
@@ -517,7 +527,6 @@
 	</div>
 	<!-- END WRAPPER -->
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHOXsTqoSDPQ5eC5TChvgOf3pAVGapYog"></script>
 	<script src="js/richmarker.js"></script>
 	<script src="js/jquery-3.6.0.min.js"></script>
 	<script src="js/jquery-ui.min.js"></script>

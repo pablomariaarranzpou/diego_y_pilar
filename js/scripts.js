@@ -698,6 +698,10 @@ var Neela;
 
         countdown: function () {
             var $_self = this;
+            $_self.cDays = "Días";
+$_self.cHours = "Horas";
+$_self.cMinutes = "Minutos";
+$_self.cSeconds = "Segundos";
             var changeTime;
 
             if ($(".countdown").length) {
