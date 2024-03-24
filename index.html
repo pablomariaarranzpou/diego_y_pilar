@@ -387,12 +387,16 @@
 									<input type="text" name="Lastname" id="lastname" placeholder="Apellidos*" class="form-control required">
 									<label for="lastname">Apellidos*</label>
 								</div>
+
+							
 							
 								<!-- Alergias -->
 								<div class="form-check mb-3">
 									<input class="form-check-input" type="checkbox" id="has_allergy" onchange="toggleAllergyDetails()">
 									<label class="form-check-label" for="has_allergy">¿Tienes alguna alergia?</label>
 								</div>
+
+								
 								<div class="form-floating mb-3" id="allergy_details" style="display: none;">
 									<input type="text" name="AllergyDetails" id="allergy_details_input" placeholder="Detalles de la alergia" class="form-control">
 									<label for="allergy_details_input">Detalles de la alergia</label>
@@ -410,6 +414,9 @@
 										}
 									}
 								</script>
+
+								<br>
+								<br>
 								
 							
 								<!-- Transporte -->
@@ -424,11 +431,9 @@
 									<label for="transport">¿Necesitas transporte?</label>
 								</div>
 
-								<!-- Cumpleaños -->
-								<div class="form-floating mb-3">
-									<input type="date" name="Birthday" id="birthday" placeholder="Fecha de Nacimiento*" class="form-control required">
-									<label for="birthday">¿Que día es tu cumpleaños?</label>
-								</div>
+								<br>
+								<br>
+
 					
 								<!-- Asistencia a la Iglesia y Banquete -->
 								<div class="form-floating mb-3">
@@ -466,6 +471,9 @@
 									<input type="text" name="AddressZip" id="address_zip" placeholder="Código Postal*" class="form-control required">
 									<label for="address_zip">Código Postal*</label>
 								</div>
+
+								<br>
+								<br>
 							
 								<!-- Canción -->
 								<div class="form-floating mb-3">
@@ -473,7 +481,7 @@
 									<label for="song">Canción que debe sonar sí o sí</label>
 								</div>
 								
-								<a>Te dejamos total libertad para decirnos lo que quieras</a>
+								<a>¡Cuentanos algún recuerdo inolvidable que tengas con nosotros!</a>
 								<!-- Mensaje -->
 								<div class="form-floating mb-3">
 									<textarea id="message" name="Message" placeholder="Mensaje" class="form-control" rows="4"></textarea>
@@ -535,14 +543,12 @@
 	<script src="js/jquery.placeholder.min.js"></script>
 	<script src="js/ismobile.js"></script>
 	<script src="js/retina.min.js"></script>
-	<script src="js/waypoints.min.js"></script>
-	<script src="js/waypoints-sticky.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/lightbox.min.js"></script>
 	<script src="js/jquery.nicescroll.js"></script>
 	<script src="js/jquery.zoomslider.js"></script>
 	<script src="js/variables.js"></script>
 	<script src="js/scripts.js"></script>
+	<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
 
 </body>
 
