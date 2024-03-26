@@ -150,9 +150,9 @@ var Neela;
 
             /**
             * Contact form submit
+            *
+            *$_self.contactForm();
             */
-            $_self.contactForm();
-
             /**
             * Capture object events
             */
