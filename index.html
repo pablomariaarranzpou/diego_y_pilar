@@ -166,13 +166,9 @@
 				color: #333;
 			}
 
-			#location {
-				padding-top: 10vh;
-			}
-
 			@media (max-width: 768px) {
 				#location .location-illustration {
-					margin-bottom: 30px;
+					margin-bottom: 20px;
 				}
 			}
 
@@ -371,6 +367,17 @@
 									<label for="lastname">Apellidos*</label>
 								</div>
 
+								<!-- Asistencia a la Iglesia y Banquete -->
+								<div class="form-floating mb-3">
+									<select class="form-select form-control required" name="EventAttendance" id="event_attendance" required>
+										<option value="default" disabled selected>Selecciona una opción...</option>
+										<option value="Iglesia">Solo Iglesia</option>
+										<option value="Iglesia y Banquete">Iglesia y Banquete</option>
+										<option value="No asistira">Ninguno</option>
+									</select>
+									<label for="event_attendance">Asistencia</label>
+								</div>
+
 								<!-- Alergias -->
 								<div class="form-check mb-3">
 									<input class="form-check-input" type="checkbox" id="has_allergy" onchange="toggleAllergyDetails()">
@@ -409,18 +416,7 @@
 									<label for="transport">Transporte</label>
 								</div>
 
-								<h4 class="mb-3">Asistencia</h4>
-
-								<!-- Asistencia a la Iglesia y Banquete -->
-								<div class="form-floating mb-3">
-									<select class="form-select form-control required" name="EventAttendance" id="event_attendance" required>
-										<option value="default" disabled selected>Selecciona una opción...</option>
-										<option value="Iglesia">Solo Iglesia</option>
-										<option value="Iglesia y Banquete">Iglesia y Banquete</option>
-										<option value="No asistira">Ninguno</option>
-									</select>
-									<label for="event_attendance">Asistencia</label>
-								</div>
+								
 
 								<h4 class="mb-3">¿Dónde podemos enviar tu invitación?</h4>
 
