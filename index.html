@@ -538,17 +538,7 @@
 										const form = event.target;
 										const formData = new FormData(form);
 							
-										fetch('./confirmacion_asistencia.php', {
-											method: 'POST',
-											body: formData,
-										})
-											.then(response => {
-												if (!response.ok) {
-													throw new Error('Network response was not ok');
-												}
-												return response.text(); 
-											})
-											.then(text => {
+										
 												document.getElementById('form_asistencia').style.display = 'none';
 												const name = formData.get('Name');
 												const messageElement = document.createElement('h5');
@@ -563,10 +553,7 @@
 												thankYouMessage.appendChild(messageElement); 
 												thankYouMessage.style.display = 'block';
 
-											})
-											.catch(error => {
-												console.error('Error:', error);
-											});
+											
 									});
 								});
 							</script>
