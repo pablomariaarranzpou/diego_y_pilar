@@ -841,6 +841,7 @@ $_self.cSeconds = "Segundos";
             }).resize();
         },
 
+        /*
         contactForm: function () {
 
             var $_self = this;
@@ -998,6 +999,7 @@ $_self.cSeconds = "Segundos";
                 return false;
             });
         },
+        */
 
         showError: function (err = "") {
             var $_self = this;
