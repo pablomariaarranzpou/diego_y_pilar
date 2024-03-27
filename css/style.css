@@ -1299,9 +1299,7 @@ p.center {
   border-color: transparent transparent #f9f9f9 transparent;
 }
 
-.section-divider-bottom-1 {
-  padding-bottom: 145px !important;
-}
+
 .section-divider-bottom-1.off-section {
   position: absolute;
   left: 0;
@@ -1318,7 +1316,7 @@ p.center {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 0 130px 100vw;
+  border-width: 0 0 15vh 100vw;
   border-color: transparent transparent #fff transparent;
 }
 .section-divider-bottom-1.section-divider-bg-color::after {
