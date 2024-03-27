@@ -5136,7 +5136,7 @@ section.side-flowers {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 210px 100vw 0 0;
+  border-width: 0vh 100vw 0 0;
   border-color: #8eaeba transparent transparent transparent;
   margin-top: -1px;
 }
