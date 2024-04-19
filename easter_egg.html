@@ -7,7 +7,7 @@
     <style>
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
@@ -18,56 +18,34 @@
             width: 100%;
             height: 100%;
         }
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 10px 20px;
-            font-size: 16px;
-            z-index: 10;
-            cursor: pointer;
-            background-color: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            display: none; /* Ocultar inicialmente */
-        }
     </style>
 </head>
 <body>
     <div class="video-container">
-        <h1 style="color: black; text-align: center; position: absolute; width: 100%; z-index: 9;">HAS ENCONTRADO EL EASTER EGG</h1>
+        <h1 style="color: black; text-align: center;">HAS ENCONTRADO EL EASTER EGG</h1>
         <video id="video" controls playsinline></video>
-        <button class="play-button" onclick="playVideo()">Play Video</button>
     </div>
 
     <script>
         var video = document.getElementById('video');
-        var button = document.querySelector('.play-button');
         var videoSrc = 'https://be6224.rcr92.lim01.cdn112.com/hls2/01/00469/yorthea9qzyi_x/index-v1-a1.m3u8?t=mNdCw0ULOb_F7WomYfCyApIxTEQPpiKshhW47zvJDp4&s=1713556976&e=43200&f=2348181&srv=26&asn=3352&sp=5500';
 
-        function playVideo() {
-            if (Hls.isSupported()) {
-                var hls = new Hls();
-                hls.loadSource(videoSrc);
-                hls.attachMedia(video);
-                hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                    video.play();
-                });
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                video.src = videoSrc;
-                video.play();
-            }
-            button.style.display = 'none';
-        }
-
-        if (video.canPlayType('application/vnd.apple.mpegurl') || Hls.isSupported()) {
-            button.style.display = 'block';
+        if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(videoSrc);
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                
+            });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = videoSrc;
+            video.load();
+        } else {
+            console.error("HLS not supported on this browser and no native support for mpegurl");
         }
 
         video.addEventListener("error", function () {
             console.log("El video no está disponible.");
-            button.style.display = 'none';
         });
     </script>
 
