@@ -43,11 +43,11 @@
                     hls.loadSource(videoSrc);
                     hls.attachMedia(video);
                 } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                    video.src = videoSrc; // Directly set the src for browsers that support HLS natively.
+                    video.src = 'https://pdrz.mcloud.bz/_s2-bkdx/1aa38522fb0b4f42a6c16518d0bdf707d077b61c02eda1f3081b25e4bb7cc7873c54955b533e7bbfe937cf0bbb48f5c2f4849516c86ad6e58bb7b6305360b4876f9540f40b1db95b4090a2ab6f4e2e443426812f111f3289cf85bd1bc2ad2a8e7910aa0f0b61ae0abcb26b5ce35340caa32d9afd66505ebecfcc9d5a87a6e5/h/hls/720/720.m3u8';
                 }
             }
 
-            setupVideo(); // Initialize video when the DOM is ready, not on first play.
+            setupVideo();
 
             playButton.addEventListener('click', function () {
                 if (video.paused) {
