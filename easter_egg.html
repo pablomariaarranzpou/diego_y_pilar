@@ -80,28 +80,6 @@
         }
     });
 </script>
-    <script>
-        var video = document.getElementById('video');
-        var videoSrc = '';
-
-        if (Hls.isSupported()) {
-            var hls = new Hls();
-            hls.loadSource(videoSrc);
-            hls.attachMedia(video);
-            hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                
-            });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-            video.src = videoSrc;
-            video.load();
-        } else {
-            console.error("HLS not supported on this browser and no native support for mpegurl");
-        }
-
-        video.addEventListener("error", function () {
-            console.log("El video no está disponible.");
-        });
-    </script>
 
 </body>
 </html>
