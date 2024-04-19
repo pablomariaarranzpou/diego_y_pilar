@@ -1,47 +1,12 @@
 @charset "UTF-8";
-/*
-* Author: Wisely Themes
-* Author URI: http://www.wiselythemes.com
-* Template Name: Neela
-* Version: 1.0.1
-*/
-/* Table of Content
-==================================================
-	#Playfair Display Font
-	#Variables
-	#Mixins
-	#Sections with background image
-	#Typography
-	#General
-	#Header
-	#Navigation
-	#Hero
-	#About Us
-	#Our Story
-	#Invite
-	#Wedding Location
-	#Bridesmaids & Groomsmen
-	#Testimonials
-	#Gift Registry
-	#Gallery
-	#Blog
-	#Widgets
-	#RSVP
-	#Footer
-	#Lightbox
-	#Media Queries */
-/* #Playfair Display Font
-================================================== */
+
 @font-face {
   font-family: "Playfair Display";
   src: url("../webfonts/playfairdisplay-regular.woff2") format("woff2"), url("../webfonts/playfairdisplay-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
-/* #Variables
-================================================== */
-/* #Mixins
-================================================== */
+
 #footer .copyright a, .widget-quick-links > ul li a, .contact-info li a, .widget-tags .tags a, .widget-latest-posts > ul h3 a, .widget-categories > ul li a, .comments .comment-list > li .comment .reply-btn,
 .comments .comment-list > li .comment-info .reply-btn, .blog-listing .item .blog-meta li a,
 .blog-listing .post-content .blog-meta li a,
