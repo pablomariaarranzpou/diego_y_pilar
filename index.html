@@ -17,6 +17,9 @@
 	<link href="css/owl.carousel.min.css" rel="stylesheet" />
 	<link href="css/style.css" rel="stylesheet" />
 	<script src="js/modernizr-3.6.0.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0/dist/js/select2.min.js"></script>
 </head>
 
 <body>
@@ -399,19 +402,45 @@
 										}
 									}
 								</script>
+								
 
 								<h4 class="mb-3">¿Necesitas transporte?</h4>
+								<a class="mb-3">Por favor, selecciona los trayectos que necesitas para organizar el transporte, si no necesitas transporte, no es necesario seleccionar nada. ¡Gracias!</a>
+								
 								<!-- Transporte -->
-								<div class="form-floating mb-3">
-									<select class="form-select required" name="Transport" id="transport" required>
-										<option value="default" disabled selected>Selecciona una opción</option>
-										<option value="Ida y vuelta">Ida y vuelta</option>
-										<option value="Solo ida">Solo ida</option>
-										<option value="Solo vuelta">Solo vuelta</option>
-										<option value="No necesita">No necesito transporte</option>
-									</select>
-									<label for="transport">Transporte</label>
+								<div class="mb-3">
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Barcelona - Iglesia" id="barcelonaIglesia" name="Transport[]">
+										<label class="form-check-label" for="barcelonaIglesia">
+											Barcelona - Iglesia
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Castellterçol - Iglesia" id="castelltercolIglesia" name="Transport[]">
+										<label class="form-check-label" for="castelltercolIglesia">
+											Castellterçol - Iglesia
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Iglesia - Banquete" id="iglesiaBanquete" name="Transport[]">
+										<label class="form-check-label" for="iglesiaBanquete">
+											Iglesia - Banquete
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Banquete - Castellterçol (03.00 am)" id="banqueteCastelltercol" name="Transport[]">
+										<label class="form-check-label" for="banqueteCastelltercol">
+											Banquete - Castellterçol (03.00 am)
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="checkbox" value="Banquete - Barcelona (03.00 am)" id="banqueteBarcelona" name="Transport[]">
+										<label class="form-check-label" for="banqueteBarcelona">
+											Banquete - Barcelona (03.00 am)
+										</label>
+									</div>
 								</div>
+								
 
 								
 
@@ -469,12 +498,13 @@
 								</div>
 							</form>
 
-							<div id="thank_you_message" class="text-center mt-3">
+							<div id="thank_you_message" class="text-center mt-3" style="display: none;">
 								<h4 class="mb-3">Formulario enviado Correctamente</h4>
 								<img src="images\fotos\275632F0-C911-4AD1-939B-375DA87D73C2.JPG" alt="About Us"
 									class="img-fluid rounded shadow mt-4 mb-4" style="filter: grayscale(100%);">
 							</div>
 							<script>
+
 								document.getElementById('thank_you_message').style.display = 'none'; // Esconde inicialmente el mensaje de agradecimiento
 								document.addEventListener('DOMContentLoaded', () => {
 									document.getElementById('form_asistencia').addEventListener('submit', (event) => {
@@ -486,12 +516,7 @@
 											return;
 										}
 
-										if(document.getElementById('transport').value === 'default') {
-											document.getElementById('transport').focus();
-											alert('Por favor, selecciona una opción de transporte');
-											return;
-										}
-
+										
 										if(document.getElementById('event_attendance').value === 'default') {
 											document.getElementById('event_attendance').focus();
 											alert('Por favor, selecciona una opción de asistencia');
@@ -529,10 +554,6 @@
 										}
 
 										const formData = new FormData(document.getElementById('form_asistencia'));
-
-									
-
-									
 							
 										
 												document.getElementById('form_asistencia').style.display = 'none';
